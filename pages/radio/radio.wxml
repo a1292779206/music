@@ -1,0 +1,28 @@
+<!--pages/radio/radio.wxml-->
+<view class="wrapper">
+    <view class="radioOne">
+        <!-- 图片 -->
+        <image class="singerpicture" src="../../image/radio1.jpg"></image>
+        <!-- 文字 -->
+        <text class="txtone">舒心电台</text>
+        <text class="txttwo" decode="{{true}}">&nbsp;&nbsp;&nbsp;愚人节，教你识破男人经常骗女人的三句谎话！</text>
+        <image class="play" src="../../image/kuaijin.png" bindtap="autoplay"></image>
+        <audio src="{{song}}" id="myAudio"  bindended="ended" bindtimeupdate="change"></audio>
+    </view> 
+    <view class="radioOne">
+        <!-- 图片 -->
+        <image class="singerpicture" src="../../image/radio2.jpg"></image>
+        <!-- 文字 -->
+        <text class="txtone">舒心电台</text>
+        <text class="txttwo" decode="{{true}}">&nbsp;&nbsp;&nbsp;愚人节，教你识破男人经常骗女人的三句谎话！</text>
+        <image class="play" src="../../image/kuaijin.png" bindtap="nextSong"></image>
+    </view> 
+    <view class="radioOne">
+        <!-- 图片 -->
+        <image class="singerpicture" src="../../image/radio3.jpg"></image>
+        <!-- 文字 -->
+        <text class="txtone">舒心电台</text>
+        <text class="txttwo" decode="{{true}}">&nbsp;&nbsp;&nbsp;愚人节，教你识破男人经常骗女人的三句谎话！</text>
+        <image class="play" src="../../image/kuaijin.png" bindtap="nextSong"></image>
+    </view> 
+</view>

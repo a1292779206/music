@@ -1,0 +1,36 @@
+/* pages/singer/singer.wxss */
+page{
+    background-color: #0d1427
+}
+.singerList{
+    padding: 10px 10px;
+}
+.singerList .singerPicture{
+    height: 140px;
+    width: 30%;
+    display: inline-block;
+    margin-right: 10px;
+    position: relative;
+}
+.singerList .singerPicture image{
+    height: 100px;
+    width: 100%;
+    display: inline-block;
+    border-radius: 5px;
+}
+
+.singerList .singerPicture text{
+    color: white;
+    display: block;
+    font-size: 14px;
+    /* margin-left:5px; */
+    text-align: center;
+    margin-bottom:2px;
+}
+.singerList .singerPicture .num{
+    position: absolute;
+    left: 1px;
+    top: 1px;
+    font-size: 12px;
+    color: red;
+}

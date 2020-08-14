@@ -1,0 +1,55 @@
+<!-- 用户信息部分  -->
+<view class="header">
+    <image class="portrait" mode="widthFix" src="{{userInfo.avatarUrl}}"></image>
+    <!-- <view class="mask"></view> -->
+    <image class="portraitShow" src="{{userInfo.avatarUrl}}"></image>
+    <view class="name">
+        {{userInfo.nickName}}
+    </view>
+    <button open-type="getUserInfo" bindgetuserinfo="bindGetUserInfo">授权登录</button>
+</view>
+<!-- 最近与收藏导航 -->
+<view class="myConcent clearfix">
+    <view class="near">
+        <view bindtap="like" class="wrapper {{tab==true?'con':''}}">
+            <text>喜欢</text>
+        </view>
+    </view>
+    <view class="near">
+        <view bindtap="history" class="wrapper {{tab==false?'con':''}}">
+            <text>历史</text>
+        </view>
+    </view>
+</view>
+<!-- 历史 -->
+<view class="containt {{tab==true?'show':'hide'}}" wx:for="{{collects}}" wx:key="*this">
+    <view class="num">
+        <text>{{index+1}}</text>
+    </view>
+    <view class="song" bindtap="collect_jump" data-index="{{index}}">
+        <text class="{{collect_playId==index?'active':''}}">{{item.song}}</text>
+        <text class="{{collect_playId==index?'act':''}}">{{item.song}}-{{item.singer}}</text>
+    </view>
+    <view class="autoplay_icon">
+        <image data-type="collect" data-index="{{index}}" class="{{collect_playId==index?'hide':'show'}}" bindtap="play" src="../../image/rank_play.png"></image>
+        <image class="{{collect_playId==index?'show':'hide'}}" bindtap="pause" src="../../image/rank_stop.png"></image>
+        <audio src="{{item.src}}" id="{{index}}" bindended="ended"></audio>
+    </view>
+</view>
+
+<!-- 喜欢 -->
+
+<view class="containt {{tab==false?'show':'hide'}}" wx:for="{{near}}" wx:key="*this">
+    <view class="num">
+        <text>{{index+1}}</text>
+    </view>
+    <view class="song" bindtap="near_jump" data-index="{{index}}">
+        <text class="{{near_playId==index?'active':''}}">{{item.song}}</text>
+        <text class="{{near_playId==index?'act':''}}">{{item.song}}-{{item.singer}}</text>
+    </view>
+    <view class="autoplay_icon">
+        <image data-type="near" data-index="{{index}}" class="{{near_playId==index?'hide':'show'}}" bindtap="play" src="../../image/rank_play.png"></image>
+        <image class="{{near_playId==index?'show':'hide'}}" bindtap="pause" src="../../image/rank_stop.png"></image>
+        <audio src="{{item.src}}" id="{{index}}"  bindended="ended"></audio>
+    </view>
+</view>

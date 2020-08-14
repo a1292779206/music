@@ -1,0 +1,32 @@
+<!-- 背景图片 -->
+<view class="wrapper">
+  <image class="bgimg" src="{{songImg}}"></image>
+  <!-- 遮罩层 -->
+  <view class="mask"></view>
+  <!-- 歌曲封面 -->
+  <image class="round" style=" transform: rotateZ({{rotate}}deg); " src="{{songImg}}"></image>
+  <!-- 播放与暂停按钮 -->
+  <image class="play {{isStop?'show':'hide'}}" bindtap="autoplay" src="../../image/play.png"></image>
+  <image class="play {{isStop?'hide':'show'}}" bindtap="autoPause" src="../../image/stop.png"></image>
+  <image class="play_left" bindtap="lastSong" src="../../image/houtui.png"></image>
+  <image class="play_right" bindtap="nextSong" src="../../image/kuaijin.png"></image>
+  <audio src="{{song}}" id="myAudio"  bindended="ended" bindtimeupdate="change"></audio>
+  <!-- 歌词部分 -->
+  <view class="word">
+  <text wx:for="{{musicWord}}" wx:key="*this" class="{{songActive==index?'active':''}}" style=" transform: translateY({{distance}}px);">{{item.text}}</text>
+</view>
+<view class="progress_box">
+    <view class="up">
+        <text>{{str1}}</text>
+        <text>{{str}}</text>
+    </view>
+    <view class="down">
+        <view class="bar"></view>
+    </view>
+</view>
+<!-- 收藏按钮 -->
+  <view class="collect">
+    <image bindtap="collection" src="{{collect}}"></image>
+  </view>
+</view>
+

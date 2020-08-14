@@ -1,0 +1,8 @@
+<!--pages/singer/singer.wxml-->
+<view class="singerList">
+    <view class="singerPicture" wx:for="{{singer}}" data-index="index" wx:key="*this" bindtap="getRanking">
+        <image src="{{item.img}}"></image>
+        <text class="num">No.{{item.num}}</text>
+        <text>{{item.txt}}</text>
+    </view>
+</view>

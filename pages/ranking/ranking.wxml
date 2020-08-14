@@ -1,0 +1,21 @@
+<!--pages/ranking/ranking.wxml-->
+<scroll-view scroll-y="true" class="contentItem" style="height:{{scrollHeigth}}px">
+    <view class="contentItemTop">
+        <image src="{{rankinglist[conId].img}}"></image>
+        <text>{{rankinglist[conId].text}}</text>
+    </view>
+    <view class="contentItemBottom">
+        <view class="containt" wx:for="{{rankinglist_song[conId]}}" wx:key="*this">
+            <view class="num">
+                <text>{{index + 1}}</text>
+            </view>
+            <view class="song" data-num="{{index}}" bindtap="jump_music">
+                <text class="{{playId==index?'active':''}}">{{item.song}}</text>
+                <text class="{{playId==index?'act':''}}">{{item.song}}-{{item.singer}}</text>
+            </view>
+            <view class="autoplay_icon">
+                <text>No.{{item.id}}</text>
+            </view>
+        </view>
+    </view>
+</scroll-view>

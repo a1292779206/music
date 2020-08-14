@@ -1,0 +1,40 @@
+{
+    "pages": [
+        "pages/index/index",
+        "pages/radio/radio",
+        "pages/ranking/ranking",
+        "pages/rankingList/rankingList",
+        "pages/singer/singer",
+        "pages/music/music",
+        "pages/my/my",
+        "pages/logs/logs"
+    ],
+    "window": {
+        "backgroundTextStyle": "light",
+        "navigationBarBackgroundColor": "#0d1427",
+        "navigationBarTitleText": "菲菲音乐",
+        "navigationBarTextStyle": "white"
+    },
+    "tabBar":{
+        "color": "#989898",
+        "selectedColor": "#6CC4AB",
+        "backgroundColor": "#0d1427",
+        "borderStyle": "white",
+        "list":[
+            {
+                "pagePath": "pages/index/index",
+                "text": "首页",
+                "iconPath": "image/yinyue1.png",
+                "selectedIconPath": "image/yinyue.png"
+            },
+            {
+                "pagePath": "pages/my/my",
+                "text": "我的",
+                "iconPath": "image/wode1.png",
+                "selectedIconPath": "image/wode.png"
+            }
+        ]
+    },
+    "style": "v2",
+    "sitemapLocation": "sitemap.json"
+}

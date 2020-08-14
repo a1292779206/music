@@ -1,0 +1,32 @@
+<!--pages/rankingList/rankingList.wxml-->
+
+<scroll-view scroll-y="true" class="rankinglist" style="height:{{scrollHeigth}}px;">
+    <view class="item" style="min-height:{{scrollHeigth}}px;">
+        <view wx:for="{{rankinglist}}" wx:key="*this" data-index="{{index}}" bindtap="itemclick" class="{{conId == index ?'con':''}}">
+            {{item.name}}
+        </view>
+    </view>
+</scroll-view>
+
+<scroll-view scroll-y="true" class="contentItem" style="height:{{scrollHeigth}}px">
+    <view class="contentItemTop">
+        <image src="{{rankinglist[conId].img}}"></image>
+        <text>{{rankinglist[conId].text}}</text>
+    </view>
+    <view class="contentItemBottom">
+        <view class="containt" wx:for="{{rankinglist_song[conId]}}" wx:key="*this">
+            <view class="num">
+                <text>{{index + 1}}</text>
+            </view>
+            <view class="song" data-num="{{index}}" bindtap="jump_music">
+                <text class="{{playId==index?'active':''}}">{{item.song}}</text>
+                <text class="{{playId==index?'act':''}}">{{item.song}}-{{item.singer}}</text>
+            </view>
+            <view class="autoplay_icon">
+                <image data-index="{{index}}" class="{{playId==index?'hide':'show'}}" bindtap="play" src="../../image/rank_play.png"></image>
+                <image class="{{playId==index?'show':'hide'}}" bindtap="stopPlay" src="../../image/rank_stop.png"></image>
+                <audio src="{{item.src}}" id="{{index}}"  bindended="ended"></audio>
+            </view>
+        </view>
+    </view>
+</scroll-view>

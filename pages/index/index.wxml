@@ -1,0 +1,117 @@
+<!--index.wxml-->
+<!-- 轮播图 -->
+<view>
+<swiper autoplay="true" indicator-dots="true" indicator-active-color="#ffffff" indicator-color="rgba(255,255,255,.3)">
+   <block wx:for="{{swiper_picture}}" wx:key="*this">
+     <swiper-item>
+        <image mode="widthFix" src="{{item}}"></image>
+    </swiper-item>
+   </block>
+</swiper>
+</view>
+<!-- 轮播图 end -->
+
+<!-- 分类 -->
+<view class="category clearfix">
+    <view class="item" bindtap="getSinger">
+        <view class="icon_warp">
+            <image src="../../image/geshou.png"></image>
+            <text>歌手</text>
+        </view>
+    </view>
+    <view class="item" bindtap="getRankin">
+        <view class="icon_warp">
+            <image src="../../image/paihang.png"></image>
+            <text>排行</text>
+        </view>
+    </view>
+    <view class="item">
+        <view class="icon_warp" bindtap="soar_more">
+            <image src="../../image/fenlei.png"></image>
+            <text>分类</text>
+        </view>
+    </view>
+    <view class="item">
+        <view class="icon_warp" bindtap="getRadio">
+            <image src="../../image/diantai.png"></image>
+            <text>电台</text>
+        </view>
+    </view>
+</view>
+<!-- 分类 -->
+
+<view class="new clearfix">
+    <view class="left">
+        <view class="icon">
+            <image src="../../image/tou1.jpg"></image>
+        </view>
+        <view class="font"> 
+            <text>新歌新碟</text>
+            <text>金志文致敬逆行者</text>
+        </view>
+    </view>
+    <view class="right">
+        <view class="icon">
+            <image src="../../image/tou2.jpg"></image>
+        </view>
+        <view class="font"> 
+            <text>新歌新碟</text>
+            <text>金志文致敬逆行者</text>
+        </view>
+    </view>
+</view>
+
+<view class="title">
+  <text>巅峰歌曲</text>
+  <text bindtap="soar_more">更多</text>
+  <image bindtap="soar_more" src="../../image/icon-arrow.png"></image>
+</view>
+
+<!-- 滑动 -->
+<view class="scroll_box">
+<scroll-view class="classification" scroll-x="true" style="width:auto;overflow:hidden;">
+    <view bindtap="jump" data-index="{{index}}" class="item" wx:for="{{soar_scroll}}" wx:key="*this">
+        <image src="{{item.hotImg}}"></image>
+        <view class="item_icon">
+            <image src="../../image/play_co.png"></image>
+        </view>
+    </view>
+</scroll-view>
+</view>
+
+<view class="title">
+  <text>飙升歌曲</text>
+  <text bindtap="soar_peak">更多</text>
+  <image bindtap="soar_peak" src="../../image/icon-arrow.png"></image>
+</view>
+
+<view class="songList">
+    <view class="song" wx:for="{{peak}}" wx:key="*this" bindtap="jump_peak" data-index="{{index}}">
+        <image src="{{item.hotImg}}">
+            <view class="song_icon">
+                <image src="../../image/play_co.png"></image>
+            </view> 
+        </image>
+        <text class="songName">{{item.song}}</text>
+        <text class="singer">{{item.singer}}</text>
+    </view>
+</view>
+
+
+<view class="title">
+  <text>热歌歌曲</text>
+  <text bindtap="soar_hot">更多</text>
+  <image bindtap="soar_hot" src="../../image/icon-arrow.png"></image>
+</view>
+
+<view class="songList">
+    <view class="song" wx:for="{{hot}}" wx:key="*this" bindtap="jump_hot" data-index="{{index}}">
+        <image src="{{item.hotImg}}">
+            <view class="song_icon">
+                <image src="../../image/play_co.png"></image>
+            </view> 
+        </image>
+        <text class="songName">{{item.song}}</text>
+        <text class="singer">{{item.singer}}</text>
+    </view>
+</view>

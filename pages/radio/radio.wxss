@@ -1,0 +1,43 @@
+/* pages/radio/radio.wxss */
+page {
+    background: #0d1427;
+}
+.radioOne{
+    width: 90%;
+    height: 100px;
+    padding: 5% 5% 5% 5%;
+    position: relative;
+    border:1px solid #ccc;
+}
+.mask{
+    width:91%;
+    height:189%;
+    position:absolute;
+    background-color:#fff;
+    opacity: 0.5;
+}
+.singerpicture{
+    width: 35%;
+    height: 100px;
+    float: left;
+    border-radius: 10px;
+}
+
+.radioOne .txtone{
+    font-size: 15px;
+    color: white;
+    text-align: center;
+    display: block;
+}
+.radioOne .txttwo{
+    font-size: 12px;
+    color: white;
+}
+
+.play{
+    width: 20px;
+    height: 20px;
+    position: absolute;
+    right: 5%;
+    bottom: 13%;
+}
